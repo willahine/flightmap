@@ -3,9 +3,11 @@
 #chartdiv {
   width: 100%;
   height:100%;
-  background-color:#929497;
-  opacity:.9;
+  background-color:#666666;
+  opacity:1;
 }
+
+
 </style>
 
 <!-- Resources -->
@@ -25,9 +27,9 @@ var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z 
 
 /**
  * SVG path for plane icon
- */
-var planeSVG = "M19.671,8.11l-2.777,2.777l-3.837-0.861c0.362-0.505,0.916-1.683,0.464-2.135c-0.518-0.517-1.979,0.278-2.305,0.604l-0.913,0.913L7.614,8.804l-2.021,2.021l2.232,1.061l-0.082,0.082l1.701,1.701l0.688-0.687l3.164,1.504L9.571,18.21H6.413l-1.137,1.138l3.6,0.948l1.83,1.83l0.947,3.598l1.137-1.137V21.43l3.725-3.725l1.504,3.164l-0.687,0.687l1.702,1.701l0.081-0.081l1.062,2.231l2.02-2.02l-0.604-2.689l0.912-0.912c0.326-0.326,1.121-1.789,0.604-2.306c-0.452-0.452-1.63,0.101-2.135,0.464l-0.861-3.838l2.777-2.777c0.947-0.947,3.599-4.862,2.62-5.839C24.533,4.512,20.618,7.163,19.671,8.11z";
 
+var planeSVG = "M19.671,8.11l-2.777,2.777l-3.837-0.861c0.362-0.505,0.916-1.683,0.464-2.135c-0.518-0.517-1.979,0.278-2.305,0.604l-0.913,0.913L7.614,8.804l-2.021,2.021l2.232,1.061l-0.082,0.082l1.701,1.701l0.688-0.687l3.164,1.504L9.571,18.21H6.413l-1.137,1.138l3.6,0.948l1.83,1.83l0.947,3.598l1.137-1.137V21.43l3.725-3.725l1.504,3.164l-0.687,0.687l1.702,1.701l0.081-0.081l1.062,2.231l2.02-2.02l-0.604-2.689l0.912-0.912c0.326-0.326,1.121-1.789,0.604-2.306c-0.452-0.452-1.63,0.101-2.135,0.464l-0.861-3.838l2.777-2.777c0.947-0.947,3.599-4.862,2.62-5.839C24.533,4.512,20.618,7.163,19.671,8.11z";
+*/
 /**
  * Create the map
  */
@@ -41,10 +43,10 @@ var map = AmCharts.makeChart( "chartdiv", {
         "id": "2000",
         "color": "#000000",
         "svgPath": targetSVG,
-        "title": "North Korea",
+        "title": "Origin Country: North Korea",
         "latitude": 39.039219,
         "longitude": 125.762524,
-        "scale": 2.6,
+        "scale": 2.8,
         "zoomLevel": 6.74,
         "zoomLongitude": 125.762524,
         "zoomLatitude": 34.1712,
@@ -67,23 +69,54 @@ var map = AmCharts.makeChart( "chartdiv", {
           "longitudes": [ 125.762524, 121.664839 ]
           },
           {
+         "latitudes": [ 39.039219, 22.270978],
+         "longitudes": [ 125.762524, 113.576678 ]
+         },
+         {
+         "latitudes": [ 39.039219, 22.543096],
+         "longitudes": [ 125.762524, 114.057865 ]
+         },
+         {
+         "latitudes": [ 39.039219, 43.837883],
+         "longitudes": [ 125.762524, 126.549572 ]
+         },
+         {
+         "latitudes": [ 39.039219, 45.803775],
+         "longitudes": [ 125.762524, 126.534967 ]
+         },
+         {
+         "latitudes": [ 39.039219, 44.551653],
+         "longitudes": [ 125.762524, 129.633169 ]
+         },
+         {
+         "latitudes": [ 39.039219, 32.060255],
+         "longitudes": [ 125.762524, 118.796877 ]
+         },
+         {
+         "latitudes": [ 39.039219, 32.394213],
+         "longitudes": [ 125.762524,  119.412947 ]
+         },
+          {
           "latitudes": [ 39.039219, 43.817072],
           "longitudes": [ 125.762524, 125.323544 ]
 
         }],
 
+
+        /**
+         * SVG path for target icon
+         */
         "images": [ {
-          "label": "Visits by Kim Jong-il To China",
-          "svgPath": planeSVG,
+          "label": "",
           "left": 100,
           "top": 45,
           "labelShiftY": 5,
           "color": "#ffffff",
           "labelColor": "#ffffff",
            "labelRollOverColor":"#ffffff",
-          "labelFontSize": 20
+          "labelFontSize": 5
         }, {
-          "label": "(2000 - 2011)",
+          "label": "",
           "left": 106,
           "top": 70,
           "labelColor": "#faaf40",
@@ -96,61 +129,155 @@ var map = AmCharts.makeChart( "chartdiv", {
 
    {
         "svgPath": targetSVG,
-        "title": "Trips to Beijing</br></br> <strong>5/1/2000</strong> </br></br> (Zhongguancun IT Complex)</br></br> <strong>5/25/2011</strong> </br></br> (Digital China R&D Center)",
+          "label": "Beijing",
+          "labelColor" : "white",
+          "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Beijing</br></br> <strong>Date:</strong> 5/1/2000</br></br><strong>Factories:</strong> <ul><li>Zhongguancun IT Complex</li> <li>Lenovo Computer</li></ul> <hr> <strong>Date:</strong> 5/25/2011 </br></br><strong>Factories:</strong> <ul><li>Digital China R&D Center</li></ul>",
         "latitude": 39.904211,
         "longitude": 116.407395
       }, {
         "svgPath": targetSVG,
-        "title": "Trips to Shanghai</br></br> <strong>1/18/2001</strong> </br></br> (Shanghai GM Motors and Paosan Steel Mill)</br></br><strong>1/17/2001</strong> </br></br> (Shanghai Bell Telephone Equipment and Shanghai Hua Hong NEC Electronics) </br></br><strong>1/19/2001</strong> </br></br> (Human Genome Research Center and Shanghai Sunqiao Modern Agriculture Development Zone) ",
+          "label": "Shanghai",
+          "labelColor" : "white",
+          "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Shanghai</br></br> <strong>Date:</strong> 1/18/2001 </br></br><strong>Factories:</strong> <ul><li>Shanghai GM Motors and Paosan Steel Mill</li></ul><hr> <strong>Date:</strong>1/17/2001</br></br> <strong>Factories:</strong><ul><li>Shanghai Bell Telephone Equipment</li> <li>Shanghai Hua Hong NEC Electronics</li></ul> <hr> <strong>Date:</strong>1/19/2001 </br></br><strong>Factories:</strong> <ul><li> Human Genome Research Center</li> <li> Zhangjiang high-tech complex</li> <li> Shanghai Pudung Software Complex</li> <li>Shanghai Sunqiao Modern Agriculture Development Zone</li></ul> ",
         "latitude": 31.230416,
         "longitude": 121.473701
       }, {
         "svgPath": targetSVG,
-        "title": "Trips to Wuhan,Hubei Province</br></br> <strong>1/11/2006</strong> </br></br> (Chang Fei Optical Fiber & Cable and Fiber Home)",
+        "label": "Wuhan",
+        "labelColor" : "white",
+        "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Wuhan,Hubei Province</br></br> <strong>Date:</strong> 1/11/2006</strong> </br></br> <strong>Factories:</strong> <ul><li>Chang Fei Optical Fiber & Cable</li><li>Fiber Home</li></ul>",
         "latitude": 30.593099,
         "longitude": 114.305393
       },
       {
         "svgPath": targetSVG,
-        "title": "Trips to Guangzhou, Guangdong Province</br></br> <strong>1/13/2006</strong> </br></br> (VTRON Technologies LTD)",
+         "label": "Guangzhou",
+         "labelColor" : "white",
+         "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Guangzhou, Guangdong Province</br></br> <strong>Date:</strong> 11/13/2006 </br></br><strong>Factories:</strong> <ul><li>VTRON Technologies LTD</li></ul>",
         "latitude": 23.129110,
         "longitude": 113.264385
       },
             {
         "svgPath": targetSVG,
-        "title": "Trip to Dalian, Liaoning Province</br></br> <strong>5/4/2010</strong> </br></br> (Dalian Port, Shipyard)",
+         "label": "Dalian",
+         "labelColor" : "white",
+         "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Dalian, Liaoning Province</br></br> <strong>Date:</strong> 5/3/2010 </br></br> <strong>Factories:</strong> <ul><li>Dalian Port Shipyard</li></ul><hr><strong>Date:</strong> 5/4/2010</br></br> <strong>Factories:</strong> <ul><li>Dalian Development Area</li> <li>Intel Area</li></ul>",
         "latitude": 38.937989,
         "longitude": 121.664839
       },
          {
         "svgPath": targetSVG,
-        "title": "Trip to Changchun, Jilin Province</br></br> <strong>5/21/2011</strong> </br></br> (First Automotive Works Group)",
+           "label": "Changchun",
+           "labelColor" : "white",
+           "labelPosition" : "left",
+           "labelRollOverColor":"white",
+        "title": "<strong>Destination:</strong> Changchun, Jilin Province</br></br> <strong>Date:</strong> 5/21/2011 </br></br> <strong>Factories:</strong> <ul><li>First Automotive Works Group</li><li> Northeast Changchun Core Area Planning Construction Hall</li></ul><hr><strong>Date:</strong> 8/28/2010 </br></br>  <strong>Factories:</strong> <ul><li> Agricultural Exhibition</li> <li> Jilin Agricultural University</li> <li> Changchun Li Chi Motors (FAW Group)</li></ul>",
         "latitude": 43.817072,
         "longitude": 125.323544
       },
-
+      {
+     "svgPath": targetSVG,
+       "label": "Zhuhai",
+       "labelColor" : "white",
+       "labelRollOverColor":"white",
+        "labelPosition" : "left",
+     "title": "<strong>Destination:</strong> Zhuhai, Guangdong Province</br></br> <strong>Date:</strong>1/14/2006 </br></br> <strong>Factories:</strong> <ul><li>Industrial and Commercial Bank of China Software Development Center</li><li> Gree Electric Appliances Inc.</li> <li>Eastcompeace Smart Card Co. Ltd</li></ul>",
+     "latitude": 22.270978,
+     "longitude": 113.576678
+   },
+   {
+  "svgPath": targetSVG,
+  "label": "Shenzhen",
+  "labelColor" : "white",
+  "labelRollOverColor":"white",
+  "title": "<strong>Destination:</strong> Shenzhen, Guangdong Province</br></br> <strong>Date:</strong>1/15/2006 </br></br> <strong>Factories:</strong> <ul><li>Huawei Technologies Co. Ltd</li><li> Han's Laser Technology</li></ul>",
+  "latitude": 22.543096,
+  "longitude":114.057865
+},
+{
+"svgPath": targetSVG,
+"label": "Jilin",
+"labelColor" : "white",
+"labelRollOverColor":"white",
+"title": "<strong>Destination:</strong> Jilin, Jilin Province</br></br> <strong>Date:</strong>8/26/2010</br></br><strong>Factories:</strong> <ul><li> Jilin Chemical Fiber Group Co. Ltd</li></ul>",
+"latitude": 43.837883,
+"longitude":126.549572
+},
+{
+"svgPath": targetSVG,
+"label": "Harbin",
+"labelColor" : "white",
+"labelRollOverColor":"white",
+"title": "<strong>Destination:</strong> Harbin, Heilongjiang Province</br></br> <strong>Date:</strong>8/29/2010 </br></br> <strong>Factories:</strong><ul><li>Harbin Engineering University</li><li>Steam turbine factory</li></ul>",
+"latitude": 45.803775,
+"longitude":126.534967
+},
+{
+"svgPath": targetSVG,
+"label": "Mudanjiang",
+"labelColor" : "white",
+"labelRollOverColor":"white",
+"title": "<strong>Destination:</strong> Mudanjiang, Heilongjiang Province</br></br> <strong>Date:</strong>5/20/2011 </br></br> <strong>Factories:</strong><ul><li>Hailin Farm</li></ul>",
+"latitude": 44.551653,
+"longitude":129.633169
+},
+{
+"svgPath": targetSVG,
+"label": "Yangzhou",
+"labelColor" : "white",
+"labelRollOverColor":"white",
+"title": "<strong>Destination:</strong> Yangzhou, Jiangsu Province</br></br> <strong>Date:</strong>5/23/2011</br></br> <strong>Factories:</strong><ul><li> China Resources Suguo (supermarket)</li> <li> Jeifang Automotive Company</li> <li> Yangzhou Smart Valley (tech)</li> </ul>",
+"latitude": 32.394213,
+"longitude":119.412947
+},
+{
+"svgPath": targetSVG,
+"label": "Nanjing",
+"labelColor" : "white",
+"labelRollOverColor":"white",
+ "labelPosition" : "left",
+"title": "<strong>Destination:</strong> Nanjing, Jiangsu Province</br></br> <strong>Date:</strong>5/24/2011 </br></br> <strong>Factories:</strong><ul><li>Panda Group (electronics)</li> <li> Supermarket</li></ul>",
+"latitude": 32.060255,
+"longitude":118.796877
+},
     ]
   },
 
   "areasSettings": {
-    "unlistedAreasColor": "#173862" ,
-    "unlistedAreasAlpha": 0.7
+    "unlistedAreasColor": "#0f2a48" ,
+    "unlistedAreasAlpha": .9
 
   },
 
   "imagesSettings": {
     "color": "#faaf40",
     "rollOverColor": "#faaf40",
-    "selectedColor": "#f05a28",
+    "selectedColor": "#be1e2d",
+    "alpha":1
   },
 
   "linesSettings": {
     "color": "#faaf40",
-    "alpha":.8
+    "alpha":.5
   },
 
   "balloon": {
-    "drop": false
+    "balloonPosition": "left",
+    "drop": false,
+    "adjustBorderColor": true,
+   "color": "#000000",
+   "cornerRadius": 1,
+   "fillColor": "#FFFFFF",
+   "maxWidth": 1200,
+   "verticalPadding": 30,
+   "horizontalPadding": 30,
+   "textAlign":"left",
+   "fontSize":20,
   },
 
   "backgroundZoomsToTop": true,
@@ -158,9 +285,11 @@ var map = AmCharts.makeChart( "chartdiv", {
 
 
   "export": {
-    "enabled": true
+    "enabled": false
   }
 } );
+
+
 </script>
 
 <!-- HTML -->
